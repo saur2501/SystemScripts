@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="test">
+	<target name="clean">
+		<delete dir="bin" />
+	</target>
+	<target name="compile" depends="clean">
+		<mkdir dir="bin" />
+		<javac srcdir="src" destdir="bin" />
+	</target>
+	<target name="jar" depends="clean, compile">
+		<mkdir dir="dist" />
+		<jar destfile="dist/app.jar" basedir="bin">
+			<manifest>
+				<attribute name="Main-Class" value="Ant" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="run" depends="jar">
+		<java jar="dist/app.jar" fork="true" failonerror="true"
+			maxmemory="128m">
+			<arg value="-h" />
+			<classpath>
+				<pathelement location="dist/app.jar" />
+			</classpath>
+		</java>
+	</target>
+</project>
