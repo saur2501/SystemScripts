@@ -1,0 +1,52 @@
+git --version
+git config --global user.email "s.d@gmail.com"
+git config --list
+git init
+rm -rf .git
+git status
+git stash
+git stash pop
+git stash list
+git stash clear
+git add .
+git diff
+git diff --staged
+git reset HEAD
+git commit -m "Message"
+git commit -am "Message"
+git commit --amend
+git rebase -i HEAD~4
+    ##pick, reword, edit, squash, fixup, exec.
+git log
+git rm third.txt
+git rm --cached third.txt
+git mv second.txt pudding.txt
+git checkout -- index.html
+git checkout 01e7   -- index.html
+git reset --hard HEAD
+git clean -f
+git clean -n
+git clean -fd
+git remote rm origin
+git remote set-url origin git://new.url.here
+git diff commit2..commit4 | git apply -R    # Add commit to reinstate older commit state
+git revert 3
+git cherry-pick master~4 master~3
+# Interactive Commit replay
+# git patch
+
+
+cf ssh appName
+
+jar xvf test.war
+
+mvn clean
+mvn compile
+mvn install
+mvn package
+mvn verify
+mvn site
+
+tar xzf sth
+unzip whatever.war
+
