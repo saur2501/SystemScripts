@@ -1,11 +1,17 @@
 gradle -v
 gradle build
+gradle build --parallel
+gradle build --debug
 gradle dependencies
 gradle clean build
+gradle test
+gradle clean
 gradle wrapper
 ./gradlew build
 ./gradlew tasks
 ./gradlew bootRun
+gradle tasks
+
 plugins {
     id 'org.springframework.boot' version '3.1.0'
     id 'io.spring.dependency-management' version '1.1.0'
@@ -33,3 +39,6 @@ dependencies {
 application {
     mainClass = 'App'       // Specify the main class
 }
+-------settinga.gradle
+rootProject.name = 'multi-project-build'
+include 'module1', 'module2'
