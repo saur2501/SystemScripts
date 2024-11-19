@@ -15,3 +15,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+-------build.gradle
+plugins {
+    id 'java'               // Apply the Java plugin
+    id 'application'        // Apply the Application plugin
+}
+
+repositories {
+    mavenCentral()          // Use Maven Central for dependencies
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:31.1-jre'  // Example dependency
+    testImplementation 'junit:junit:4.13.2'           // JUnit for testing
+}
+
+application {
+    mainClass = 'App'       // Specify the main class
+}
