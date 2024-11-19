@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Use a hosted Ubuntu runner
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Use a GitHub action to checkout the code
+      - name: Set up Node.js
+        uses: actions/setup-node@v2  # Use an action to set up Node.js
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install  # Run a shell command to install dependencies
+      - name: Run tests
+        run: npm test  # Run the tests
