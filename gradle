@@ -42,3 +42,12 @@ application {
 -------settinga.gradle
 rootProject.name = 'multi-project-build'
 include 'module1', 'module2'
+-----
+task customTask {
+    doFirst {
+        println 'This runs first'
+    }
+    doLast {
+        println 'This runs last'
+    }
+}
